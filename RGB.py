@@ -1,5 +1,5 @@
 from PIL import Image
-image = Image.open('CMYK.jpg')
+image = Image.open('fill.jpg')
 
 try:
     if image.mode == 'RGB':
