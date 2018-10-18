@@ -3,7 +3,7 @@ from PIL import Image
 from svglib.svglib import svg2rlg
 
 ####This program converts in 3 module
-#(1) SVG will convert inimage file
+#(1) SVG will convert in image file
 #(2) image will convert into RGB & CMYK color form
 #(3) output image will convert into PDF
 
