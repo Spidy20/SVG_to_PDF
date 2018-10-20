@@ -1,6 +1,7 @@
 from reportlab.graphics import renderPM
 from PIL import Image
 from svglib.svglib import svg2rlg
+import img2pdf
 
 ####This program converts in 3 module
 #(1) SVG will convert in image file
@@ -9,8 +10,8 @@ from svglib.svglib import svg2rlg
 
 
 ####Here svg will convert into an Image
-drawing = svg2rlg("simple.svg")
-new_file_name='simple.jpg'
+drawing = svg2rlg("testing.svg") ##Input file
+new_file_name='testing.jpg'
 renderPM.drawToFile(drawing, new_file_name)
 ####For open image
 image = Image.open(new_file_name)
@@ -20,10 +21,9 @@ image = Image.open(new_file_name)
 try:
     ###if image already in RGB form than it will automatically convert into PDF
     if image.mode == 'RGB':
+        with open("RGB.pdf", "wb") as f:   ##RGB.pdf is new PDF name
+            f.write(img2pdf.convert(image))
         print("Your image is already in RGB mode so i converted it in PDF")
-        im = Image.open(image)
-        new_file = 'RGB.pdf'
-        im.save(new_file, resolution=200.0)
 
     if image.mode=="CMYK":
         picture=image.convert('RGB').save('RGB.jpg')
@@ -58,10 +58,10 @@ try:
         print("Your image is in F(32-bit floating point pixels) color mode i converted it to RGB image successfully")
 
     file = 'RGB.jpg' ###new image file in RGB
-    im = Image.open(file)
-    new_file = 'RGB.pdf' ###PDF file
+    with open("RGB.pdf", "wb") as f:
+        f.write(img2pdf.convert('RGB.jpg'))
     print("PDF created successfully")
-    im.save(new_file, resolution=200.0)
+
 except:
     print(" ")
 
@@ -72,9 +72,10 @@ try:
     ###if image in CMYK color mode than it will automatically convert in PDF
     if image.mode == 'CMYK':
         im = Image.open(image)
-        new_file = 'CMYK.pdf'
-        print("Your image in already in CMYK format so i convert it to PDF")
-        im.save(new_file, resolution=200.0)
+        with open("CMYK.pdf", "wb") as f:   ####CMYK.pdf is new PDF name
+            f.write(img2pdf.convert(image))
+            print("Your image in already in CMYK format so i convert it to PDF")
+
 
     if image.mode=="RGB":
         picture=image.convert('CMYK').save('CMYK.jpg')
@@ -109,9 +110,9 @@ try:
         print("Your image is in F(32-bit floating point pixels) color mode i converted it to CMYK image successfully")
 
     file = 'CMYK.jpg'##new iimage file in CMYK color form
-    im = Image.open(file)
-    new_file = 'CMYK.pdf' ####new pdf file
+    with open("CMYK.pdf", "wb") as f:
+        f.write(img2pdf.convert('CMYK.jpg'))
     print("PDF created successfully")
-    im.save(new_file, resolution=200.0)
+
 except:
     print(" ")
