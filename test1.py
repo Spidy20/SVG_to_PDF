@@ -2,19 +2,23 @@ from reportlab.graphics import renderPM
 from PIL import Image
 from svglib.svglib import svg2rlg
 import img2pdf
+import os
 
 ####This program converts in 3 module
-#(1) SVG will convert inimage file
+#(1) SVG will convert in image file
 #(2) image will convert into RGB & CMYK color form
 #(3) output image will convert into PDF
 
 
 ####Here svg will convert into an Image
-drawing = svg2rlg("simple.svg")
-new_file_name='simple.jpg'
-renderPM.drawToFile(drawing, new_file_name)
+file_name='html'  ###type only file name(which you want to convert in PDF) without extension
+svg=file_name+".svg"
+new_image_file_name=file_name+'.jpg'
+drawing = svg2rlg(svg) ##Input file
+renderPM.drawToFile(drawing, new_image_file_name)
+
 ####For open image
-image = Image.open(new_file_name)
+image = Image.open(new_image_file_name)
 
 ####For convert any color type image into RGB & CMYK image
 
@@ -57,7 +61,7 @@ try:
         picture = image.convert('RGB').save('RGB.jpg')
         print("Your image is in F(32-bit floating point pixels) color mode i converted it to RGB image successfully")
 
-    file = 'RGB.jpg' ###new image file in RGB
+     ###new image file in RGB
     with open("RGB.pdf", "wb") as f:
         f.write(img2pdf.convert('RGB.jpg'))
     print("PDF created successfully")
@@ -109,10 +113,16 @@ try:
         picture = image.convert('CMYK').save('CMYK.jpg')
         print("Your image is in F(32-bit floating point pixels) color mode i converted it to CMYK image successfully")
 
-    file = 'CMYK.jpg'##new iimage file in CMYK color form
+    ##new iimage file in CMYK color form
     with open("CMYK.pdf", "wb") as f:
         f.write(img2pdf.convert('CMYK.jpg'))
     print("PDF created successfully")
 
+
 except:
     print(" ")
+
+
+####For removing unnecessary files(JPGs)
+os.remove('RGB.jpg')
+os.remove('CMYK.jpg')
