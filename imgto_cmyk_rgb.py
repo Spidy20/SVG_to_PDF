@@ -43,18 +43,15 @@ try:
 
     if image.mode == "P":
         picture = image.convert('RGB').save('RGB.jpg')
-        print(
-            "Your image is in P(8-bit pixels, mapped to any other mode using a colour palette) color mode i converted it to RGB image successfully")
+        print("Your image is in P(8-bit pixels, mapped to any other mode using a colour palette) color mode i converted it to RGB image successfully")
 
     if image.mode == "RGBA":
         picture = image.convert('RGB').save('RGB.jpg')
-        print(
-            "Your image is in RGBA(4x8-bit pixels, true colour with transparency mask) color mode i converted it to RGB image successfully")
+        print("Your image is in RGBA(4x8-bit pixels, true colour with transparency mask) color mode i converted it to RGB image successfully")
 
     if image.mode == "YCbCr":
         picture = image.convert('RGB').save('RGB.jpg')
-        print(
-            "Your image is in YCbCr(3x8-bit pixels, colour video format) color mode i converted it to RGB image successfully")
+        print("Your image is in YCbCr(3x8-bit pixels, colour video format) color mode i converted it to RGB image successfully")
 
     if image.mode == "I":
         picture = image.convert('RGB').save('RGB.jpg')
@@ -96,13 +93,11 @@ try:
 
     if image.mode == "P":
         picture = image.convert('CMYK').save('CMYK.jpg')
-        print(
-            "Your image is in P(8-bit pixels, mapped to any other mode using a colour palette) color mode i converted it to CMYK image successfully")
+        print("Your image is in P(8-bit pixels, mapped to any other mode using a colour palette) color mode i converted it to CMYK image successfully")
 
     if image.mode == "RGBA":
         picture = image.convert('CMYK').save('CMYK.jpg')
-        print(
-            "Your image is in RGBA(4x8-bit pixels, true colour with transparency mask) color mode i converted it to CMYK image successfully")
+        print("Your image is in RGBA(4x8-bit pixels, true colour with transparency mask) color mode i converted it to CMYK image successfully")
 
     if image.mode == "YCbCr":
         picture = image.convert('CMYK').save('CMYK.jpg')
