@@ -119,10 +119,15 @@ try:
     print("PDF created successfully")
 
 
+
 except:
     print(" ")
 
+finally:
+    ####For removing unnecessary files(JPGs)
+    image.close()
+    del image
+    os.remove('RGB.jpg')
+    os.remove('CMYK.jpg')
+    os.remove(file_name + '.jpg')
 
-####For removing unnecessary files(JPGs)
-os.remove('RGB.jpg')
-os.remove('CMYK.jpg')
