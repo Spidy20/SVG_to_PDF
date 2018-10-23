@@ -1,5 +1,5 @@
 from PIL import Image
-image = Image.open('jaguar.jpg')
+image = Image.open('RGB.png')
 
 try:
     if image.mode == 'CMYK':
@@ -7,35 +7,35 @@ try:
         print("Your image is already in CMYK mode")
 
     if image.mode=="RGB":
-        picture=image.convert('CMYK').save('CMYK.jpg')
+        picture=image.convert('CMYK').save('CMYK.png')
         print("Your image is in RGB color mode i converted it to CMYK image successfully")
 
     if image.mode=="1":
-        picture=image.convert('CMYK').save('CMYK.jpg')
+        picture=image.convert('CMYK').save('CMYK.png')
         print("Your image is in 1(1-bit pixels, black and white) color mode i converted it to CMYK image  successfully")
 
     if image.mode == "L":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in L(8-bit pixels, black and white) color mode i converted it to CMYK image successfully")
 
     if image.mode == "P":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in P(8-bit pixels, mapped to any other mode using a colour palette) color mode i converted it to CMYK image successfully")
 
     if image.mode == "RGBA":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in RGBA(4x8-bit pixels, true colour with transparency mask) color mode i converted it to CMYK image successfully")
 
     if image.mode == "YCbCr":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in YCbCr(3x8-bit pixels, colour video format) color mode i converted it to CMYK image successfully")
 
     if image.mode == "I":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in I(32-bit signed integer pixels) color mode i converted it to CMYK image successfully")
 
     if image.mode == "F":
-        picture = image.convert('CMYK').save('CMYK.jpg')
+        picture = image.convert('CMYK').save('CMYK.png')
         print("Your image is in F(32-bit floating point pixels) color mode i converted it to CMYK image successfully")
 
 
@@ -43,7 +43,7 @@ except:
     print("failure")
 
 
-file = 'CMYK.jpg'
+file = 'CMYK.png'
 im = Image.open(file)
 new_file = 'CMYK.pdf'
 print("PDF created successfully")

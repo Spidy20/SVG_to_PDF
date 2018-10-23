@@ -47,5 +47,5 @@ file = 'RGB.jpg'
 im = Image.open(file)
 new_file = 'RGB.pdf'
 print("PDF created successfully")
-im.save(new_file, resolution=300.0)
+im.save(new_file, resolution=300.0,rasterized=True)
 

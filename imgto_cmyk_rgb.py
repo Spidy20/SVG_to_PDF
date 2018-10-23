@@ -13,7 +13,7 @@ import os
 ####Here svg will convert into an Image
 file_name='seo'  ###type only file name(which you want to convert in PDF) without extension
 svg=file_name+".svg"
-new_image_file_name=file_name+'.jpg'
+new_image_file_name=file_name+'.png'
 drawing = svg2rlg(svg) ##Input file
 renderPM.drawToFile(drawing, new_image_file_name)
 
@@ -127,6 +127,6 @@ finally:
     ####For removing unnecessary files(JPGs)
     image.close()
     del image
-    os.remove('RGB.jpg')
-    os.remove('CMYK.jpg')
-    os.remove(file_name + '.jpg')
+    # os.remove('RGB.jpg')
+    # os.remove('CMYK.jpg')
+    # # os.remove(file_name + '.png')

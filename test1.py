@@ -11,9 +11,9 @@ import os
 
 
 ####Here svg will convert into an Image
-file_name='html'  ###type only file name(which you want to convert in PDF) without extension
+file_name='photo'  ###type only file name(which you want to convert in PDF) without extension
 svg=file_name+".svg"
-new_image_file_name=file_name+'.jpg'
+new_image_file_name=file_name+'.png'
 drawing = svg2rlg(svg) ##Input file
 renderPM.drawToFile(drawing, new_image_file_name)
 
@@ -116,6 +116,7 @@ try:
     ##new iimage file in CMYK color form
     with open("CMYK.pdf", "wb") as f:
         f.write(img2pdf.convert('CMYK.jpg'))
+
     print("PDF created successfully")
 
 
@@ -129,5 +130,5 @@ finally:
     del image
     os.remove('RGB.jpg')
     os.remove('CMYK.jpg')
-    os.remove(file_name + '.jpg')
+    os.remove(file_name + '.png')
 
